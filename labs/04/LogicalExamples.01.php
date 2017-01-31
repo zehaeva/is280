@@ -6,44 +6,11 @@
 </head>
 <body>
 <?php
-$Value1 = "first text string";
-$Value2 = "second text string";
+$TrueValue = true;
+$FalseValue = false;
 
-$ReturnValue = ($Value1 == $Value2 ? "true" : "false");
-echo '<p>$Value1 equal to $Value2: ', $ReturnValue, "<br />";
-
-$Value1 = 50;
-$Value2 = 75;
-
-$ReturnValue = ($Value1 == $Value2 ? "true" : "false");
-echo '$Value1 equal to $Value2: ', $ReturnValue, "<br />";
-
-$ReturnValue = ($Value1 != $Value2 ? "true" : "false");
-echo '$Value1 not equal to $Value2: ', $ReturnValue, "<br />";
-
-$ReturnValue = ($Value1 <> $Value2 ? "true" : "false");
-echo '$Value1 not equal to $Value2: ', $ReturnValue, "<br />";
-
-$ReturnValue = ($Value1 > $Value2 ? "true" : "false");
-echo '$Value1 greater than to $Value2: ', $ReturnValue, "<br />";
-
-$ReturnValue = ($Value1 < $Value2 ? "true" : "false");
-echo '$Value1 less than to $Value2: ', $ReturnValue, "<br />";
-
-$ReturnValue = ($Value1 => $Value2 ? "true" : "false");
-echo '$Value1 greater than or equal to $Value2: ', $ReturnValue, "<br />";
-
-$ReturnValue = ($Value1 =< $Value2 ? "true" : "false");
-echo '$Value1 less than or equal to $Value2: ', $ReturnValue, "<br />";
-
-$Value1 = 25;
-$Value2 = 25;
-
-$ReturnValue = ($Value1 === $Value2 ? "true" : "false");
-echo '$Value1 equal to $Value2 AND the same data type: ', $ReturnValue, "<br />";
-
-$ReturnValue = ($Value1 !== $Value2 ? "true" : "false");
-echo '$Value1 not equal to $Value2 AND not the same data type: ', $ReturnValue, "</p>";
+$ReturnValue = ($TrueValue ? "true" : "false");
+echo "<p>$ReturnValue<br />";
 ?>
 </body>
 </html>
