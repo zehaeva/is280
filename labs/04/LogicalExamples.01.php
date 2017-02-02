@@ -11,6 +11,15 @@ $FalseValue = false;
 
 $ReturnValue = ($TrueValue ? "true" : "false");
 echo "<p>$ReturnValue<br />";
+
+$ReturnValue = ($FalseValue ? "true" : "false");
+echo "<p>$ReturnValue<br />";
+
+$ReturnValue = ($TrueValue || $FalseValue ? "true" : "false");
+echo "<p>$ReturnValue<br />";
+
+$ReturnValue = ($TrueValue && $FalseValue ? "true" : "false");
+echo "<p>$ReturnValue<br />";
 ?>
 </body>
 </html>

@@ -30,10 +30,10 @@ echo '$Value1 greater than to $Value2: ', $ReturnValue, "<br />";
 $ReturnValue = ($Value1 < $Value2 ? "true" : "false");
 echo '$Value1 less than to $Value2: ', $ReturnValue, "<br />";
 
-$ReturnValue = ($Value1 => $Value2 ? "true" : "false");
+$ReturnValue = ($Value1 >= $Value2 ? "true" : "false");
 echo '$Value1 greater than or equal to $Value2: ', $ReturnValue, "<br />";
 
-$ReturnValue = ($Value1 =< $Value2 ? "true" : "false");
+$ReturnValue = ($Value1 <= $Value2 ? "true" : "false");
 echo '$Value1 less than or equal to $Value2: ', $ReturnValue, "<br />";
 
 $Value1 = 25;
