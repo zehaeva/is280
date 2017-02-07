@@ -8,7 +8,15 @@
         var firstItem = document.form[0].quantity1.value * document.form[0].rate1.value;
         var secondItem = document.form[0].quantity2.value * document.form[0].rate2.value;
         var thirdItem = document.form[0].quantity3.value * document.form[0].rate3.value;
-        
+        if (isNaN(firstItem) || isNaN(secondItem) || isNaN(thirdItem)) {
+          alert("You can only enter numbers in the Quantity and Rate fields!");
+          return false;
+        }
+        else {
+          document.form[0].amount1.value = firstItem;
+          document.form[0].amount2.value = secondItem;
+          document.form[0].amount3.value = thirdItem;
+        }
       }
 		</script>
 	</head>
