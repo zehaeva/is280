@@ -12,13 +12,17 @@
         
         if (isNaN(firstItem) || isNaN(secondItem) || isNaN(thirdItem)) {
           alert("You can only enter numbers in the Quantity and Rate fields!");
+          
           return false;
         }
         else {
           myform.amount1.value = firstItem;
           myform.amount2.value = secondItem;
           myform.amount3.value = thirdItem;
+          
           var grandTotal = firstItem + secondItem + thirdItem;
+          
+          return true;
         }
       }
 		</script>
