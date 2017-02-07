@@ -18,7 +18,8 @@
 		</form>
 		<form method="get" action="ViewInvoices.php" enctype="application/x-www-form-urlencoded"> 
 			<p>
-				<input type="submit" value="View Invoices" />
+				<input type="submit" value="View Invoice #" />
+				<input type="text" name="invoicenum" />
 			</p>
 		</form>
 	 </body>
