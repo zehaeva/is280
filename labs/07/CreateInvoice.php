@@ -5,9 +5,10 @@
 		<link rel="stylesheet" href="php_styles.css" type="text/css" />
 		<script type="text/javascript">
       function calcTotal() {
-        var firstItem = document.form[0].quantity1.value * document.form[0].rate1.value;
-        var secondItem = document.form[0].quantity2.value * document.form[0].rate2.value;
-        var thirdItem = document.form[0].quantity3.value * document.form[0].rate3.value;
+        var myform = document.form[0];
+        var firstItem = myform.quantity1.value * myform.rate1.value;
+        var secondItem = myform.quantity2.value * myform.rate2.value;
+        var thirdItem = myform.quantity3.value * myform.rate3.value;
         
       }
 		</script>
