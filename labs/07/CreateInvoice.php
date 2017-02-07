@@ -10,6 +10,16 @@
         var secondItem = myform.quantity2.value * myform.rate2.value;
         var thirdItem = myform.quantity3.value * myform.rate3.value;
         
+        if (isNaN(firstItem) || isNaN(secondItem) || isNaN(thirdItem)) {
+          alert("You can only enter numbers in the Quantity and Rate fields!");
+          return false;
+        }
+        else {
+          myform.amount1.value = firstItem;
+          myform.amount2.value = secondItem;
+          myform.amount3.value = thirdItem;
+          var grandTotal = firstItem + secondItem + thirdItem;
+        }
       }
 		</script>
 	</head>
