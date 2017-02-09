@@ -42,25 +42,23 @@
 				<tr>
 					<td>In-House Training<br />
 						<p><input type="text" name="description1" value="Description 1" size=34 tabindex=5 /></p>
-						<p><input type="text" name="description2" value="Description 2" size=34 tabindex=8 /></p>
-						<p><input type="text" name="description3" value="Description 3" size=34 tabindex=11 /></p>
-					</td>
-					<td>Quantity<br />
-						<p><input type="text" name="quantity1" size=5 tabindex=6 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="quantity2" size=5 tabindex=9 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="quantity3" size=5 tabindex=12 onchange="return calcTotal()"/></p>
-					</td>
-					<td>Rate<br />
-						<p><input type="text" name="rate1" size=5 tabindex=7 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="rate2" size=5 tabindex=10 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="rate3" size=5 tabindex=13 onchange="return calcTotal()"/></p>
-					</td>
-					<td>Amount<br />
-						<p><input type="text" name="amount1" size=5 /></p>
-						<p><input type="text" name="amount2" size=5 /></p>
-						<p><input type="text" name="amount3" size=5 /></p>
+						<p><input type="text" name="description2" value="Description 2" size=34 tabindex=6 /></p>
+						<p><input type="text" name="description3" value="Description 3" size=34 tabindex=7 /></p>
 					</td>
 				</tr>
+				<?php 
+					$count = 3;
+					for ($i=0;$i<$count;$i++) {
+						echo '<tr><td colspan=3>';
+						echo '<label for="quantity'. $i .'">Quantity</label>';
+						echo '<input type="text" name="quantity'. $i .'" size=5 tabindex=10 onchange="calcTotal()"/>';
+						echo '<label for="rate'. $i .'">Rate</label>';
+						echo '<input type="text" name="rate'. $i .'" size=5 tabindex=10 onchange="calcTotal()"/>';
+						echo '<label for="amount'. $i .'">Amount</label>';
+						echo '<input type="text" name="amount'. $i .'" size=5/>';
+						echo '</td></tr>';
+					}
+				?>
 			</table>
 		</form>
 	</body>
