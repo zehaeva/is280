@@ -40,26 +40,33 @@
 					</td>
 				</tr>
 				<tr>
-					<td>In-House Training<br />
-						<p><input type="text" name="description1" value="Description 1" size=34 tabindex=5 /></p>
-						<p><input type="text" name="description2" value="Description 2" size=34 tabindex=8 /></p>
-						<p><input type="text" name="description3" value="Description 3" size=34 tabindex=11 /></p>
-					</td>
-					<td>Quantity<br />
-						<p><input type="text" name="quantity1" size=5 tabindex=6 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="quantity2" size=5 tabindex=9 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="quantity3" size=5 tabindex=12 onchange="return calcTotal()"/></p>
-					</td>
-					<td>Rate<br />
-						<p><input type="text" name="rate1" size=5 tabindex=7 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="rate2" size=5 tabindex=10 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="rate3" size=5 tabindex=13 onchange="return calcTotal()"/></p>
-					</td>
-					<td>Amount<br />
-						<p><input type="text" name="amount1" size=5 /></p>
-						<p><input type="text" name="amount2" size=5 /></p>
-						<p><input type="text" name="amount3" size=5 /></p>
-					</td>
+					<?php
+						function textfield($name, $value, $size, $tabindex, $onchange) {
+							return '<input type="text" name="'. $name .'" value="'. $value .'" size='. $size .' tabindex='. $tabindex .' onchange="'. $onchange .'" />';
+						}
+						$count = 3;
+						echo '<td>In-House Training<br />';
+						for ($i=0;$i<$count;$i++) {
+							echo "\n".'<p>'. textfield('description'. $i, 'Description '. $i, 34, 5 + $i, '') .'</p>';
+						}
+						echo '</td>';
+						echo '<td>Quantity<br />';
+						for ($i=1;$i<=$count;$i++) {
+							echo "\n".'<p>'. textfield('quantity'. $i, '', 5, 4 + $i * 2, 'return calcTotal()') .'</p>';
+						}
+						echo '</td>';
+						echo '<td>Rate<br />';
+						for ($i=1;$i<=$count;$i++) {
+							echo "\n".'<p>'. textfield('rate'. $i, '', 5, 6 + $i * 2, 'return calcTotal()') .'</p>';
+						}
+						echo '</td>';
+						echo '<td>Amount<br />';
+						for ($i=1;$i<=$count;$i++) {
+							echo "\n".'<p>'. textfield('amount'. $i, '', 5, 0, '') .'</p>';
+						}
+						echo '</td>';
+						
+					?>
 				</tr>
 			</table>
 		</form>
