@@ -23,6 +23,9 @@
 			  return true;
 			}
 		  }
+		  function getTotal() {
+			  return grandTotal;
+		  }
 		</script>
 	</head>
 	<body>
@@ -39,27 +42,39 @@
 						<p>Terms # <input type="text" name="terms" size=28 tabindex=4 /></p>
 					</td>
 				</tr>
-				<td>In-House Training<br />
+				<tr>
+					<td>In-House Training<br />
 						<p><input type="text" name="description1" value="Description 1" size=34 tabindex=5 /></p>
 						<p><input type="text" name="description2" value="Description 2" size=34 tabindex=8 /></p>
 						<p><input type="text" name="description3" value="Description 3" size=34 tabindex=11 /></p>
 					</td>
 					<td>Quantity<br />
-						<p><input type="text" name="quantity1" size=5 tabindex=6 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="quantity2" size=5 tabindex=9 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="quantity3" size=5 tabindex=12 onchange="return calcTotal()"/></p>
+						<p><input type="text" name="quantity1" size=10 tabindex=6 onchange="return calcTotal()"/></p>
+						<p><input type="text" name="quantity2" size=10 tabindex=9 onchange="return calcTotal()"/></p>
+						<p><input type="text" name="quantity3" size=10 tabindex=12 onchange="return calcTotal()"/></p>
 					</td>
 					<td>Rate<br />
-						<p><input type="text" name="rate1" size=5 tabindex=7 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="rate2" size=5 tabindex=10 onchange="return calcTotal()"/></p>
-						<p><input type="text" name="rate3" size=5 tabindex=13 onchange="return calcTotal()"/></p>
+						<p><input type="text" name="rate1" size=10 tabindex=7 onchange="return calcTotal()"/></p>
+						<p><input type="text" name="rate2" size=10 tabindex=10 onchange="return calcTotal()"/></p>
+						<p><input type="text" name="rate3" size=10 tabindex=13 onchange="return calcTotal()"/></p>
 					</td>
 					<td>Amount<br />
-						<p><input type="text" name="amount1" size=5 /></p>
-						<p><input type="text" name="amount2" size=5 /></p>
-						<p><input type="text" name="amount3" size=5 /></p>
+						<p><input type="text" name="amount1" size=10 tabindex=0 onfocus="this.blur()" /></p>
+						<p><input type="text" name="amount2" size=10 tabindex=0 onfocus="this.blur()" /></p>
+						<p><input type="text" name="amount3" size=10 tabindex=0 onfocus="this.blur()" /></p>
 					</td>
+				</tr>
+				<tr>
+					<td colspan=4 style="text-align: right">
+						TOTAL: <input type="text" name="total1" size=10 value=0 tabindex=0 onfocus="this.blur()" />
+					</td>
+				</tr>
 			</table>
+			<p>
+				<input type="submit" value="Reset" tabindex=15 />
+				<input type="submit" value="Save New Invoice" tabindex=14 />
+			</p>
 		</form>
+		<a href="class_page.php" />Return to Main Invoices Page</a>
 	</body>
 </html>
