@@ -75,6 +75,6 @@
 				<input type="submit" value="Save New Invoice" tabindex=14 />
 			</p>
 		</form>
-		<a href="class_page.php" />Return to Main Invoices Page</a>
+		<a href="Invoices.php" />Return to Main Invoices Page</a>
 	</body>
 </html>
