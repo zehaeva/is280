@@ -50,7 +50,6 @@
 				echo "<strong>Terms</strong>: $terms<br /></td></tr>";
 				echo "<tr>";
 				
-				
 				$titles = array("Description", "Quantity", "Rate", "Amount");
 				for ($j=0; $j<4; $j++) {
 					echo "<td><strong>". $titles[$j] ."</strong><br />";
