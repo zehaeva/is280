@@ -49,34 +49,24 @@
 				echo "<strong>Date</strong>: $date<br />";
 				echo "<strong>Terms</strong>: $terms<br /></td></tr>";
 				echo "<tr>";
+				
+				
 				$titles = array("Description", "Quantity", "Rate", "Amount");
-				echo "<td><strong>Description</strong><br />";
-				for ($i=0; $i<3; $i++) {
-					echo $items[$i][0] ."<br />";
+				for ($j=0; $j<4; $j++) {
+					echo "<td><strong>". $titles[$j] ."</strong><br />";
+					for ($i=0; $i<3; $i++) {
+						echo $items[$i][$j] ."<br />";
+					}
+					echo "</td>";
 				}
-				echo "</td>";
-				echo "<td><strong>Quantity</strong><br />";
-				for ($i=0; $i<3; $i++) {
-					echo $items[$i][1] ."<br />";
-				}
-				echo "</td>";
-				echo "<td><strong>Rate</strong><br />";
-				for ($i=0; $i<3; $i++) {
-					echo $items[$i][2] ."<br />";
-				}
-				echo "</td>";
-				echo "<td><strong>Amount</strong><br />";
-				for ($i=0; $i<3; $i++) {
-					echo $items[$i][3] ."<br />";
-				}
-				echo "</td></tr>";
+				echo "</tr>";
 				
 				echo "<tr><td colspan=4 style='text-align: right'><strong>Total</strong>: $total</td></tr>" ;
 				
 				echo "</table>";
 			}
 			else {
-				else "Could not read file!";
+				echo "Could not read file!";
 			}
 		?>
 	</body>
