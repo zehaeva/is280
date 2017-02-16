@@ -1,0 +1,17 @@
+a~b~c~d
+1234
+2017-01-01
+Credit
+desc1
+desc2
+desc3
+qty1
+qty2
+qty3
+rate1
+rate2
+rate3
+amount1
+amount2
+amount3
+total
