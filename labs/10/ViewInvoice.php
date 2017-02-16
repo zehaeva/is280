@@ -43,6 +43,15 @@
 				$items[0][2] = stripslashes(fgets($invoice_fields));
 				$items[1][2] = stripslashes(fgets($invoice_fields));
 				$items[2][2] = stripslashes(fgets($invoice_fields));
+				
+			//	amounts
+				$items[0][3] = stripslashes(fgets($invoice_fields));
+				$items[1][3] = stripslashes(fgets($invoice_fields));
+				$items[2][3] = stripslashes(fgets($invoice_fields));
+				
+				$total = stripslashes(fgets($invoice_fields));
+				
+				fclose($invoice_fields);
 			}
 		?>
 	</body>
