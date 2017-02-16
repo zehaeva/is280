@@ -29,25 +29,12 @@
 				
 				$items = array(array());
 				
-			//	descriptions
-				$items[0][0] = stripslashes(fgets($invoice_fields));
-				$items[1][0] = stripslashes(fgets($invoice_fields));
-				$items[2][0] = stripslashes(fgets($invoice_fields));
-				
-			//	quantities
-				$items[0][1] = stripslashes(fgets($invoice_fields));
-				$items[1][1] = stripslashes(fgets($invoice_fields));
-				$items[2][1] = stripslashes(fgets($invoice_fields));
-				
-			//	rates
-				$items[0][2] = stripslashes(fgets($invoice_fields));
-				$items[1][2] = stripslashes(fgets($invoice_fields));
-				$items[2][2] = stripslashes(fgets($invoice_fields));
-				
-			//	amounts
-				$items[0][3] = stripslashes(fgets($invoice_fields));
-				$items[1][3] = stripslashes(fgets($invoice_fields));
-				$items[2][3] = stripslashes(fgets($invoice_fields));
+			//	gets the data for each line item
+				for($i=0; $i<=3; $i++) {
+					for($j=0; $j<=3; $j++) {
+						$items[$j][$i] = stripslashes(fgets($invoice_fields));
+					}
+				}
 				
 				$total = stripslashes(fgets($invoice_fields));
 				
