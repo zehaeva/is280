@@ -12,9 +12,9 @@
                      "The Cat in the Hat");
  
       for ($i = 0; $i < count($books); ++$i) { 
-        echo "<p>The title \"{$Books[$i]}\" contains " .
-             strlen($Books[$i]) . " characters and " .
-             str_word_count($Books[$i]) . " words.</p>";
+        echo "<p>The title \"{$books[$i]}\" contains " .
+             strlen($books[$i]) . " characters and " .
+             str_word_count($books[$i]) . " words.</p>";
       }
     ?>
   </body>
