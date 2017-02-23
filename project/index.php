@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MV Go Club</title
+	</head>
+	<body>
 <?php
 //include datahbase connection
   include_once('inc/db.php');
 
-  print('<div id="title">Welcome to the MV Go Club web page!</div>');
-  print('<div id="menu"><ul><li><a herf="members">Members</a></li></ul></div>');
+  include('menu.php');
+
+  print("<div class='header'>Welcome to the Mohawk Valley Go Club!</div>");
 ?>
+	</body>
+</html>
