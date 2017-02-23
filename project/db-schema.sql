@@ -1,5 +1,19 @@
 create database "MVGOClub" encoding 'UTF8';
 
+create user goclub_site password 'goclubreadonly';
+
+--ACCESS DB
+REVOKE CONNECT ON DATABASE "MVGOClub" FROM PUBLIC;
+GRANT  CONNECT ON DATABASE "MVGOClub"  TO goclub_site;
+
+--ACCESS SCHEMA
+REVOKE ALL     ON SCHEMA public FROM PUBLIC;
+GRANT  USAGE   ON SCHEMA public  TO goclub_site;
+
+--ACCESS TABLES
+REVOKE ALL ON ALL TABLES IN SCHEMA public FROM PUBLIC ;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO goclub_site;
+
 create table "users" ("user_id" serial primary key, 
                       "user_name" text, 
                       "given_name" text, 
