@@ -9,7 +9,7 @@
 		
 		if (isset($current_hand[1])) {
 			$player_hand = explode("~", $current_hand[1]);
-			$player_hand = $hit;
+			$player_hand[] = $hit;
 			$card_count = 0;
 			$aces = 0;
 			
@@ -67,9 +67,6 @@
 			else if ($card_count > 21) {
 				$cards = $cards ." Busted!";
 			}
-			else {
-				
-			}
 			
 			$card_store = fopen($file, "w");
 			fwrite($card_store, "$cards");
@@ -77,5 +74,5 @@
 		}
 	}
 	
-	header("location:blackjack.php");
+	//header("location:blackjack.php");
 ?>
