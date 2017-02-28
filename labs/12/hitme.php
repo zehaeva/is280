@@ -16,17 +16,32 @@
 				if (strpos($player_hand[$i], "Ace") !== False) {
 					$aces++;
 				}
-				else if (strpos($player_hand[$i], "King") !== False) {
-					
+				else if (strpos($player_hand[$i], "Two") !== False) {
+					$card_count += 2;
 				}
-				else if (strpos($player_hand[$i], "Queen") !== False) {
-					
+				else if (strpos($player_hand[$i], "Three") !== False) {
+					$card_count += 3;
 				}
-				else if (strpos($player_hand[$i], "Jack") !== False) {
-					
+				else if (strpos($player_hand[$i], "Four") !== False) {
+					$card_count += 4;
+				}
+				else if (strpos($player_hand[$i], "Five") !== False) {
+					$card_count += 5;
+				}
+				else if (strpos($player_hand[$i], "Six") !== False) {
+					$card_count += 6;
+				}
+				else if (strpos($player_hand[$i], "Seven") !== False) {
+					$card_count += 7;
+				}
+				else if (strpos($player_hand[$i], "Eight") !== False) {
+					$card_count += 8;
+				}
+				else if (strpos($player_hand[$i], "Nine") !== False) {
+					$card_count += 9;
 				}
 				else {
-					
+					$card_count += 10;
 				}
 			}
 		}
