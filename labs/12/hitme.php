@@ -1,7 +1,8 @@
 <?php
+	$file = "hand.txt";
 //	check to see that file exists
-	if (file_exists("hand.txt") && filesize("hand.txt") > 0) {
-		$current_hand = file("hand.txt");
+	if (file_exists($file) && filesize($file) > 0) {
+		$current_hand = file($file);
 		$deck = explode(",", $current_hand[0]);
 		$hit = array_shift($deck);
 		$cards = implode(",", $deck);
@@ -63,6 +64,18 @@
 			if ($card_count == 21) {
 				$cards = $cards ." You win!";
 			}
+			else if ($card_count > 21) {
+				$cards = $cards ." Busted!";
+			}
+			else {
+				
+			}
+			
+			$card_store = fopen($file, "w");
+			fwrite($card_store, "$cards");
+			fclose($card_store);
 		}
 	}
+	
+	header("location:blackjack.php");
 ?>
