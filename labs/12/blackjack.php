@@ -12,9 +12,11 @@
 			<a href="deal.php">Deal</a>&nbsp;
 		</p>
 		<?php
-			if (file_exists("hand.txt") && filesize("hand.txt") > 0) {
-				$current_hand = file("hand.txt");
-				$hand = explode("~", $current_hand);
+			$file = "hand.txt";
+		
+			if (file_exists($file) && filesize($file) > 0) {
+				$current_hand = file($file);
+				$hand = explode("~", $current_hand[1]);
 				
 				foreach ($hand as $card) {
 					echo "<p>". $card ."</p>";
@@ -23,7 +25,7 @@
 				if (isset($current_hand[2])) {
 					echo $current_hand[2];
 					
-					$card_store = fopen("hand.txt", "w");
+					$card_store = fopen($file, "w");
 					
 					fclose($card_store);
 				}
