@@ -1,6 +1,16 @@
-Vue.component('members', {props: ['member'], template: '<li>{{member.given_name}} {{member.sur_name}}</li>'});
-var memberapp = new Vue({
-  	el: '#member-app', 
+Vue.component('memberList', {
+    props: ['member'],
+    template: '<li>{{member.given_name}} {{member.sur_name}}</li>'
+});
+
+var member = {
+    id: null,
+    given_name: null,
+    sur_name: null
+}
+
+var membersapp = new Vue({
+  	el: '#member-app',
 	data: {memberList: null},
 	created: function() {
 		this.fetchData()
