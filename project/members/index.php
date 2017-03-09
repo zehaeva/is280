@@ -3,6 +3,7 @@
 	<head>
 		<title>MV Go Club Members</title>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<?php include_once('../bootstrap-cdn.php'); ?>
 	</head>
 	<body>
 <?php

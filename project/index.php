@@ -3,19 +3,16 @@
 	<head>
 		<title>MV Go Club</title>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
-		<script type="text/javascript">
-		</script>
+		<?php include_once('bootstrap-cdn.php'); ?>
 	</head>
 	<body>
 <?php
 //include datahbase connection
   include_once('inc/db.php');
-
   include('menu.php');
-
 ?>
-
-  <div class='header'>Welcome to the Mohawk Valley Go Club!</div>
+  		<div class='header'>Welcome to the Mohawk Valley Go Club!</div>
+		<div class='content'><p>We're a group of local Go enthusiasts who love to get together in person and share our passion for the ancient game of Go.</p></div>
   
 	</body>
 </html>
