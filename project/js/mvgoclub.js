@@ -1,13 +1,20 @@
-Vue.component('memberList', {
+Vue.component('members', {
     props: ['member'],
-    template: '<li>{{member.given_name}} {{member.sur_name}}</li>'
+    template: '<li class="list-group-item"><memberName :mData="member"></memberName> <a v-if="member.aga_id > 0" :href="\'http://www.usgo.org/ratings-lookup-id?PlayerID=\' + member.aga_id" >AGA Rank Info</a><div v-if="member.pandanet"> Pandanet User Name: {{member.pandanet}}</div></div></li>'
 });
 
 var member = {
-    id: null,
+    user_id: null,
     given_name: null,
-    sur_name: null
+    sur_name: null,
+	aga_id: null,
+	pandanet: null
 }
+
+Vue.component('memberName', {
+	props: ['mData', 'id'],
+	template: '<div>{{this.mData.given_name}} {{this.mData.sur_name}}</div>',
+});
 
 var membersapp = new Vue({
   	el: '#member-app',
@@ -88,8 +95,8 @@ var demo = new Vue({
 	el: '#demo',
 	data: {
 		searchQuery: '',
-		gridColumns: ['black_player', 'white_player', 'date_played', 'date_uploaded' ],
-		gridHeader: {black_player: 'Black Player', white_player: 'White Player', date_played: 'Date Played', date_uploaded: 'Date Uploaded' },
+		gridColumns: ['black_player_name', 'white_player_name', 'date_played', 'date_uploaded' ],
+		gridHeader: {black_player_name: 'Black Player', white_player_name: 'White Player', date_played: 'Date Played', date_uploaded: 'Date Uploaded' },
 		gridData: null
 	},
 	created: function() {
