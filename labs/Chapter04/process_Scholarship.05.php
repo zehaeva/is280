@@ -10,7 +10,7 @@
     ?>
         <h2 style = "text-align:center">Scholarship Form</h2>
 
-        <form name="scholarship" action="process_Scholarship.php" method="post">
+        <form name="scholarship" action="process_Scholarship.05.php" method="post">
         <p>First Name: <input type="text" name="fName"value="<?php echo $first_name; ?>" /></p>
         <p>Last Name: <input type="text" name="lName" value="<?php echo $last_name; ?>" /></p>
         <p><input type="reset" value="Clear Form" />&nbsp;&nbsp;<input type="submit" name="Submit" value="Send Form" />

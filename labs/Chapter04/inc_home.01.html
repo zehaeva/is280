@@ -1,0 +1,2 @@
+<h2>Home Page</h2>
+<p>This is the default home page that displays whenever a new visitor comes to the site</p>

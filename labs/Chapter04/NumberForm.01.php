@@ -23,7 +23,7 @@
       
       if ($displayform) {
     ?>
-      <form name="NumberForm" action="NumberForm.php" method="post">
+      <form name="NumberForm" action="NumberForm.01.php" method="post">
         <p>Enter a number: <input type="text" name="Number" value="<?php echo $number; ?>" /></p>
         <p><input type="reset" value="Clear Form" />&nbsp;&nbsp;<input type="submit" name="Submit" value="Send Form" /></p>
       </form>
