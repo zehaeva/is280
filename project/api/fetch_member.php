@@ -13,7 +13,11 @@
 
 	$members = array();
 	while ($rows = pg_fetch_assoc($results)) {
-		$members[] = array('given_name'=>$rows['given_name'], 'sur_name'=>$rows['sur_name']);
+		$members[] = array('user_id'=>$rows['user_id'], 
+						   'given_name'=>$rows['given_name'], 
+						   'sur_name'=>$rows['sur_name'], 
+						   'aga_id'=>$rows['aga_id'],
+					   	   'pandanet'=>$rows['pandanet_profile_name']);
 	}
 
 	echo json_encode($members); 
