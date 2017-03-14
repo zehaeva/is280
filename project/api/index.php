@@ -21,7 +21,12 @@
 						<dd>This endpoint returns all the games in the database, you can ask for a specific game by adding the id of the game at the end of the endpoint. e.g. <a href="/api/games/1"><?php echo $_SERVER['SERVER_NAME']; ?>/api/games/1</a></dd>
 					</dl>
 				</li>
-				<li><a href="/api/members/"><?php echo $_SERVER['SERVER_NAME']; ?>/api/members/</a></li>
+				<li>
+					<dl>
+						<dt><a href="/api/members/"><?php echo $_SERVER['SERVER_NAME']; ?>/api/members/</a></dt>
+						<dd>This endpoint returns all the memebers in the database, you can ask for a specific member by adding the id of the game at the end of the endpoint. e.g. <a href="/api/members/1"><?php echo $_SERVER['SERVER_NAME']; ?>/api/members/1</a></dd>
+					</dl>
+				</li>
 				</ul>
 			</div>
 			
