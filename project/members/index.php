@@ -7,10 +7,13 @@
 	</head>
 	<body>
 <?php
-  include('../menu.php');
+include('../menu.php');
+print(menu(1));
 ?>
-		<div id="title">Members</div>
-		<div id="member-app"><ul class='list-group'><members v-for="details in memberList" v-bind:member="details"></ul></div>
-		<script src="http://<?php echo $_SERVER['SERVER_NAME'] .'/js/mvgoclub.js'; ?>" type="text/javascript"></script>
+		<div class="container">
+			<div id="title">Members</div>
+			<div id="member-app"><ul class='list-group'><members v-for="details in memberList" v-bind:member="details"></ul></div>
+			<script src="http://<?php echo $_SERVER['SERVER_NAME'] .'/js/mvgoclub.js'; ?>" type="text/javascript"></script>
+		</div>
 	</body>
 </html>
