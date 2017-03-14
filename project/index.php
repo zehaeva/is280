@@ -1,3 +1,8 @@
+<?php
+//include datahbase connection
+include_once('inc/db.php');
+include_once('menu.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,10 +12,7 @@
 	</head>
 	<body>
 <?php
-//include datahbase connection
-  include_once('inc/db.php');
-  include('menu.php');
-  print(menu(0));
+print(menu(0));
 ?>
 		<div class="container">
 			<div class='header'>Welcome to the Mohawk Valley Go Club!</div>
