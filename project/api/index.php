@@ -1,3 +1,7 @@
+<?php
+include_once('../inc/db.php');
+include_once('../menu.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,7 +11,6 @@
 	</head>
 	<body>
 <?php
-  include('../menu.php');
   print(menu(5));
 ?>
 		<div class="container">
