@@ -18,14 +18,29 @@
 			<table frame="border" rules="cols">
 				<tr>
 					<td align=right valign=top>
-						<p>First Name<input type="text" size=30 name="first_name"></p>
-						<p>Last Name<input type="text" size=30 name="last_name"></p>
+						<p>First Name <input type="text" size=30 name="first_name" /></p>
+						<p>Last Name <input type="text" size=30 name="last_name" /></p>
+						<p>Phone <input type="text" size=30 name="phone" /></p>
+					</td>
+					<td align=right valign=top>
+						<p>Address <input type="text" size=40 name="address" /></p>
+						<p>City <input type="text" size=10 name="city" />
+						State <input type="text" size=2 name="state" maxlength=2 />
+						Zip <input type="text" size=10 name="zip" maxlength=10 /></p>
+						<p>E-Mail <input type="text" size=40 name="email" /></p>
 					</td>
 				</tr>
-				<tr>
-					<td></td><td align=right valign=top></td>
-				</tr>
 			</table>
+			<p>
+				<input type="submit" name="submit" value="Get Diver ID" />
+				<input type="reset" name="reset" value="Reset" />
+			</p>
+		</form>
+		<form method="get" action="courselistings.php" >
+			<p>
+				<input type="text" size="30" name="diverid" />
+				<input type="submit" name="submit" value="Class Registration" />
+			</p>
 		</form>
 	</body>
 </html>
