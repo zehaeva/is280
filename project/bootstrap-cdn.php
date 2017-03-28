@@ -12,6 +12,8 @@
 
 <link rel="stylesheet" href="<?php "http://". $_SERVER['SERVER_NAME']; ?>/css/login.css">
 <link rel="stylesheet" href="<?php "http://". $_SERVER['SERVER_NAME']; ?>/css/site.css">
-<link rel="stylesheet" href="<?php "http://". $_SERVER['SERVER_NAME']; ?>/css/icons.css">
+<?php
+include_once("inc/icons.php");
+?>
 
 
