@@ -15,8 +15,10 @@ include_once('menu.php');
 print(menu(0));
 ?>
 		<div class="container">
-			<div class='header'>Welcome to the Mohawk Valley Go Club!</div>
-			<div class='content'><p>We're a group of local Go enthusiasts who love to get together in person and share our passion for the ancient game of Go.</p></div>
+			<div class="panel">
+				<div class='panel-title'><h3>Welcome to the Mohawk Valley Go Club!</h3></div>
+				<div class='content panel-body'>We're a group of local Go enthusiasts who love to get together in person and share our passion for the ancient game of Go.</div>
+			</div>
  		</div> 
 	</body>
 </html>

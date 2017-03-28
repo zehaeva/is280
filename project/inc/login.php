@@ -8,7 +8,7 @@ function get_login_button() {
 		$return .= '';
 	}
 	else {
-		$return .= '<div class="navbar-form navbar-right" role="login"><a class="btn btn-default" data-toggle="modal" data-target="#login-modal">Login</a></div>'. get_login_form();
+		$return .= '<div class="navbar-form navbar-right" role="login"><a class="btn btn-link " data-toggle="modal" data-target="#login-modal">Login</a></div>'. get_login_form();
 	}
 
 	return $return .'</div>';

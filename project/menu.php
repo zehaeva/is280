@@ -4,7 +4,7 @@ include_once('inc/login.php');
 
 function menu($active) {
 	$pages = array(array('', 'Home'), 
-			 array("members", "Members"), 
+			 array("member", "Members"), 
 			 array("games", "Games"), 
 			 array("learn", "Learn to Play"), 
 			 array('schedule', "Club Events"),
