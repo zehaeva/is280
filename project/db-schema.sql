@@ -20,15 +20,19 @@ create table "users" ("user_id" serial primary key,
                       "sur_name" text, 
                       "salt" text, 
                       "password" text, 
-                      "pandanet_profile_url" text, 
-                      "aga_profile" text);
+                      "pandanet_id" text, 
+                      "ogs_id" text, 
+                      "kgs_id" text, 
+                      "aga_id" text
+				);
                       
 create table "games" ("game_id" serial primary key, 
                       "date_played" timestamp, 
                       "date_uploaded" timestamp, 
                       "white_player" bigint, 
                       "black_player" bigint, 
-                      "file_url" text);
+                      "file_url" text
+				);
 
 insert into "users" (user_name, given_name, sur_name) values 
   ('zehaeva', 'Howard', 'Canaway'), 
