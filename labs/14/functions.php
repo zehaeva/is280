@@ -81,12 +81,22 @@ function initialize_db($connection, $dbname) {
 		
 		@mysqli_select_db($connection, $dbname);
 	}
-					
+
 	$table_name = 'divers';
 	$sql = 'SELECT * FROM '. $table_name .';'; 
 	$results = @mysqli_query($connection, $sql);
 	if (!$results) {
 		$sql_create = 'create table '. $table_name . ' (diverid int auto_increment primary key, firstname varchar(40), lastname varchar(40), phone varchar(20), address varchar(80), city varchar(40), state varchar(40), zip varchar(10), email varchar(80));';
+		@mysqli_query($connection, $sql_create) or die(dbconnerror($connection));
+		
+		echo '<p>Table Created</p>';
+	}
+	
+	$table_name = 'registration';
+	$sql = 'SELECT * FROM '. $table_name .';'; 
+	$results = @mysqli_query($connection, $sql);
+	if (!$results) {
+		$sql_create = 'create table '. $table_name . ' (registrationid int auto_increment primary key, diverid int, class varchar(40), days varchar(40), time varchar(40));';
 		@mysqli_query($connection, $sql_create) or die(dbconnerror($connection));
 		
 		echo '<p>Table Created</p>';
