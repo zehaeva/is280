@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Register Diver</title>
+		<title>Review Schedule</title>
 		<link rel="stylesheet" src="php_styles.css" type="text/css" />
 	</head>
 	<body>
 		<h1>Seaside Shelly's Scuba School</h1>
-		<h2>Registration Confirmation</h2>
+		<h2>This is your current schedule</h2>
 		<?php
 			$diver_id = @$_REQUEST['diverid'];
 			
