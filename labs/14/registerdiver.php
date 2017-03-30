@@ -8,7 +8,7 @@
 		<h1>Seaside Shelly's Scuba School</h1>
 		<h2>Registration Confirmation</h2>
 		<?php
-			$diver_id = @$_REQUEST['diver_id'];
+			$diver_id = @$_REQUEST['diverid'];
 			
 			if (empty($diver_id)) {
 				exit('<p>You must enter a valid DiverID in the proper field, please return to the page and enter your DiverID</p>');
