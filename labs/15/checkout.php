@@ -9,11 +9,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Gretchen's Gourmet Goods</title>
+		<title>Gretchen's Gourmet Goods Checkout</title>
 		<link rel="stylesheet" href="php_style.css" type="text/css" />
 	</head>
 	<body>
-		<h1>Gretchen's Gourmet Goods</h1>
+		<h1>Gretchen's Gourmet Goods Checkout</h1>
 		<?php
 			$cart = unserialize($_SESSION['curcart']);
 			$cart->setTable("orders");
