@@ -64,7 +64,22 @@ class ShoppingCart {
 	}
 	
 	public function showCart() {
-		
+		if (empty($this->orders)) {
+			echo "<p>Your Shopping Cart is empty</p>";
+		}
+		else {
+			echo '<table width="100%" border=1>';
+			echo '<tr><th>Remove Item</th><th>Product</th><th>Quantity</th><th>Price</th></tr>';
+			$total = 0;
+			foreach($this->orders as $order) {
+				$sql = 'SELECT * FROM '. $this->order_table[key($this->orders)] 
+					  .' WHERE productid = '. key($this->orders);
+				$result = mysqli_query($this->conn, $sql) or die($this->getDBError());
+				
+				$total += ;
+			}
+			echo '</table>';
+		}
 	}
 }
 
