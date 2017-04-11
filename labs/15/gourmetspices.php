@@ -17,6 +17,7 @@
 			<a href= "<?php echo 'gourmetolives.php?PHPSESSID='. session_id(); ?>">Gourmet Olives</a>
 			<a href= "<?php echo 'gourmetspices.php?PHPSESSID='. session_id(); ?>">Gourmet Spices</a>
 		</p>
+		<h2>Shop Spices</h2>
 		<?php
 			$database = 'getchengourmet';
 			$table = 'spices';
