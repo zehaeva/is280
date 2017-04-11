@@ -12,9 +12,9 @@
 				echo '<hr /><p>You must enter an existing Invoice Number. 
 				Click your brower back button to return to the Invoices page.</p><hr />';
 			}
-			else if (is_readable("open\\". $_REQUEST['invoicenum'] .".txt")) {
+			else if (is_readable("open/". $_REQUEST['invoicenum'] .".txt")) {
 			//	open the file
-				$invoice_fields = fopen("open\\". $_REQUEST['invoicenum'] .".txt", 'r');
+				$invoice_fields = fopen("open/". $_REQUEST['invoicenum'] .".txt", 'r');
 				$bill_to = fgets($invoice_fields);
 				
 			//	now we're going to get the raw data of the first line into a more useful format

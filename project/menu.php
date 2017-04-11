@@ -21,7 +21,7 @@ function menu($active) {
 		else {
 			$class = '';
 		}
-		$return .= '<li class="'. $class .'"><a href="http://'. $_SERVER['SERVER_NAME'] .'/'. $page[0] .'">'. $page[1] .'</a></li>';
+		$return .= '<li class="'. $class .'"><a href="https://'. $_SERVER['SERVER_NAME'] .'/'. $page[0] .'">'. $page[1] .'</a></li>';
 	}
 
 	$return .= "</ul>";

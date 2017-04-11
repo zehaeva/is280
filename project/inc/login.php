@@ -1,11 +1,11 @@
 <?php
-include_once('../inc/db.php');
+include_once('db.php');
 
 function get_login_button() {
 	$return = '<div>';
 
-	if (isset($_SESSION['username'])) {
-		$return .= '<div class="navbar-form navbar-right"><a class="btn btn-link " href="/profile">Welcome '. $_SESSION['given_name'] .' '. $_SESSION['sur_name'] .'</a></div>';
+	if (isset($_SESSION['user_name'])) {
+		$return .= '<div class="navbar-form navbar-right"><a class="btn btn-link " href="/profile">Welcome '. $_SESSION['given_name'] .' '. $_SESSION['sur_name'] .'</a> <a class="btn btn-link" href="/logout">logout</a></div>';
 	}
 	else {
 		$return .= '<div class="navbar-form navbar-right" role="login"><a class="btn btn-link " data-toggle="modal" data-target="#login-modal">Login</a></div>'. get_login_form();
@@ -27,7 +27,7 @@ return '<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" ari
 			</form>
 
 			<div class="login-help">
-				<a href="register">Register</a> - <a href="forgotpassword">Forgot Password</a>
+				<a href="/register">Register</a> - <a href="/forgotpassword">Forgot Password</a>
 			</div>
 		</div>
 	</div>

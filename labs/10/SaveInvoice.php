@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php
-            $bill_to = addslashes($_REQUEST['billto']);
+            isset($_REQUEST['billto']) ? $bill_to = addslashes($_REQUEST['billto']) : echo '';
             $date = addslashes($_REQUEST['date']);
             $terms = addslashes($_REQUEST['terms']);
             $description1 = addslashes($_REQUEST['description1']);

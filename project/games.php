@@ -1,5 +1,6 @@
 <?php
 include_once('inc/db.php');
+include_once('inc/functions.php');
 include_once('menu.php');
 ?>
 <!DOCTYPE html>
@@ -34,7 +35,7 @@ include_once('menu.php');
 					  </demo-grid>
 					</div>
 
-					<script src="http://<?php echo $_SERVER['SERVER_NAME'] .'/js/mvgoclub.js'; ?>" type="text/javascript"></script>
+					<script src="<?php echo get_http(); ?>://<?php echo $_SERVER['SERVER_NAME'] .'/js/mvgoclub.js'; ?>" type="text/javascript"></script>
 				</div>
 			</div>
 		</div>

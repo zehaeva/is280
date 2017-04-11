@@ -1,5 +1,6 @@
 <?php
 include_once('inc/db.php');
+include_once('inc/functions.php');
 include('menu.php');
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ print(menu(1));
 			<div class="panel">
 				<div class="panel-title"><h3>Member Directory</h3></div>
 				<div class="panel-body" id="member-app"><ul class='list-group'><members v-for="details in memberList" v-bind:member="details"></ul></div>
-				<script src="http://<?php echo $_SERVER['SERVER_NAME'] .'/js/mvgoclub.js'; ?>" type="text/javascript"></script>
+				<script src="<?php echo get_http(); ?>://<?php echo $_SERVER['SERVER_NAME'] .'/js/mvgoclub.js'; ?>" type="text/javascript"></script>
 			</div>
 		</div>
 	</body>

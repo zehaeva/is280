@@ -10,8 +10,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="<?php "http://". $_SERVER['SERVER_NAME']; ?>/css/login.css">
-<link rel="stylesheet" href="<?php "http://". $_SERVER['SERVER_NAME']; ?>/css/site.css">
+<link rel="stylesheet" href="<?php "https://". $_SERVER['SERVER_NAME']; ?>/css/modal.css">
+<link rel="stylesheet" href="<?php "https://". $_SERVER['SERVER_NAME']; ?>/css/site.css">
 <?php
 include_once("inc/icons.php");
 ?>

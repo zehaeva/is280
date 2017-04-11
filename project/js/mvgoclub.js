@@ -1,6 +1,6 @@
 Vue.component('members', {
     props: ['member'],
-    template: '<li class="list-group-item"><memberName :mData="member"></memberName> <a v-if="member.aga_id > 0" :href="\'http://www.usgo.org/ratings-lookup-id?PlayerID=\' + member.aga_id" >AGA Rank Info</a><div v-if="member.pandanet"> Pandanet User Name: {{member.pandanet}}</div></div></li>'
+    template: '<li class="list-group-item"><memberName :mData="member"></memberName> <AGALink :mData="member" /><KGSLink :mData="member" /><OGSLink :mData="member" /><PandaNetLink :mData="member" /></li>'
 });
 
 var member = {
@@ -8,6 +8,8 @@ var member = {
     given_name: null,
     sur_name: null,
 	aga_id: null,
+	ogs_id: null,
+	kgs_id: null,
 	pandanet: null
 }
 
@@ -15,6 +17,27 @@ Vue.component('memberName', {
 	props: ['mData', 'id'],
 	template: '<div>{{this.mData.given_name}} {{this.mData.sur_name}}</div>',
 });
+
+Vue.component('OGSLink', {
+	props: ['mData', 'id'],
+	template: '<div v-if="this.mData.ogs_id > 0">OGS ID: <a :href="\'https://www.online-go.com/player/\' + this.mData.ogs_id + \'/\'">{{this.mData.ogs_id}}</a></div>',
+});
+
+Vue.component('KGSLink', {
+	props: ['mData', 'id'],
+	template: '<div v-if="this.mData.kgs_id">KGS: {{this.mData.kgs_id}}</div>',
+});
+
+Vue.component('AGALink', {
+	props: ['mData', 'id'],
+	template: '<a v-if="this.mData.aga_id > 0" :href="\'http://www.usgo.org/ratings-lookup-id?PlayerID=\' + this.mData.aga_id" >AGA Rank Info</a></a>',
+});
+
+Vue.component('PandaNetLink', {
+	props: ['mData', 'id'],
+	template: '<div v-if="this.mData.pandanet"> Pandanet User Name: {{this.mData.pandanet}}</div>',
+});
+
 
 var membersapp = new Vue({
   	el: '#member-app',
@@ -95,8 +118,8 @@ var demo = new Vue({
 	el: '#demo',
 	data: {
 		searchQuery: '',
-		gridColumns: ['black_player_name', 'white_player_name', 'date_played', 'date_uploaded' ],
-		gridHeader: {black_player_name: 'Black Player', white_player_name: 'White Player', date_played: 'Date Played', date_uploaded: 'Date Uploaded' },
+		gridColumns: ['black_player_name', 'white_player_name', 'date_played', 'date_uploaded', 'file_url' ],
+		gridHeader: {black_player_name: 'Black Player', white_player_name: 'White Player', date_played: 'Date Played', date_uploaded: 'Date Uploaded', file_url: 'File' },
 		gridData: null
 	},
 	created: function() {

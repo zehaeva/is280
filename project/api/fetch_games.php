@@ -1,7 +1,7 @@
 <?php
 	include_once("../inc/db.php");
 
-	$sql = 'SELECT g.*, (select u.given_name || \' \' || u.sur_name from users u where u.user_id = g.white_player) as white_player_name, (select u.given_name || \' \' || u.sur_name from users u where u.user_id = g.black_player) as black_player_name FROM "games" g ';
+	$sql = "SELECT g.game_id, to_char(g.date_played, 'YYYY-MM-DD') as date_played, to_char(g.date_uploaded, 'YYYY-MM-DD') as date_uploaded, getusername(g.white_player) as white_player_name, getusername(g.black_player) as black_player_name, g.file_url FROM games g ";
 
 	if (isset($_REQUEST["id"]) && $_REQUEST['id'] >= 1) {
 		$sql .= ' WHERE "game_id" = $1 limit 1';
