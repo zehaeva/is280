@@ -17,7 +17,27 @@
 			<a href= "<?php echo 'gourmetolives.php?PHPSESSID='. session_id(); ?>">Gourmet Olives</a>
 			<a href= "<?php echo 'gourmetspices.php?PHPSESSID='. session_id(); ?>">Gourmet Spices</a>
 		</p>
-		
-		
+		<?php
+			$database = 'getchengourmet';
+			$table = 'olives';
+			if (isset($_SESSION['curcart'])) {
+				$cart = unserialize($_SESSION['curcart']);
+			}
+			else {
+				if (class_exists("ShoppingCart")) {
+					$cart = new ShoppingCart();
+					$cart->setDatabase($database);
+				}
+				else {
+					exit('<p>The Shopping Cart is unavailable. Please try again later</p>');
+				}
+			}
+			
+			$cart->setTable($table);
+			$cart->getProductList();
+			
+			$_SESSION['curcart'] = serialize($cart);
+		?>
+		<p><a href="<?php echo 'showcart.php?PHPSESSID='. session_id(); ?>">Show Cart</a></p>
 	</body>
 </html>

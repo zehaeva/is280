@@ -135,10 +135,10 @@ class ShoppingCart {
 		echo 'Your order has been submitted!';
 	}
 }
-
+/*
 $val = new ShoppingCart();
 
 $val->addItem();
 $val->showCart();
-
+*/
 ?>
