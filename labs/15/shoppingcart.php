@@ -63,6 +63,10 @@ class ShoppingCart {
 		@$this->conn->select_db($this->db_name) or die($this->getDBError());
 	}
 	
+	private function getshowcarturl($operation, $productid) {
+		return 'showcart.php?PHPSESSID='. session_id() .'&operation='. $operation .'&productid='. $productid;
+	}
+	
 	public function showCart() {
 		if (empty($this->orders)) {
 			echo "<p>Your Shopping Cart is empty</p>";
@@ -76,15 +80,65 @@ class ShoppingCart {
 					  .' WHERE productid = '. key($this->orders);
 				$result = mysqli_query($this->conn, $sql) or die($this->getDBError());
 				
-				$total += ;
+				while($row = mysqli_fetch_row($result)) {
+					$total += $row[3] * $Order;
+					echo '<tr>';
+					echo '<td align="center"><a href="'. $this->getshowcarturl('remove', $row[0]) .'">Remove</a></td>';
+					echo '<td>'. $row[1] .'</td>';
+					echo '<td align="center">'. $order .'</td>';
+					echo '<td align="center"><a href="'. $this->getshowcarturl('addone', $row[0]) .'">Add One</a></td>';
+					echo '<td align="center"><a href="'. $this->getshowcarturl('removeone', $row[0]) .'">Remove One</a></td>';
+					printf('<td align="center">$%.02f</td>', $row[3]);
+					echo '</tr>';
+				}
 			}
+			echo '<tr><td align="center"><a href="'. $this->getshowcarturl('emptycart', 0) .'"><strong>Empty Cart</strong></a></td>';
+			echo '<td colspan=2><strong>Your shopping cart contains '. count($this->orders) .' products</strong></td>';
+			printf('<td align="center"><strong>Total: $%.02f</strong></td></tr>', $total);
 			echo '</table>';
 		}
+	}
+	
+	public function removeItem() {
+	//	removes the specified item from the cart
+		$productid = $_REQUEST['productid'];
+		unset ($this->orders[$productid]);
+		unset ($this->order_table[$productid]);
+	}
+	
+	public function emptyCart() {
+	//	empties the cart
+		$this->orders = array();
+		$this->orders_table = array();
+	}
+	
+	public function addOne() {
+		$productid = $_REQUEST['productid'];
+		$this->orders[$productid] += 1;
+	}
+	
+	public function removeOne() {
+		$productid = $_REQUEST['productid'];
+		$this->orders[$productid] -=1;
+		if ($this->orders[$productid] <= 0) {
+			$this->removeItem();
+		}
+	}
+	
+	public function checkOut() {
+		$productid = $_REQUEST['productid'];
+		foreach($this->orders as $order) {
+			$sql = 'INSERT INTO '. $this->table_name . " VALUES ('". session_id() ."', '". key($this->orders) ."', ". $this->orders[key($this->orders)] .", '". $order ."')";
+			$result = @mysqli_query($this->conn, $sql) or die($this->getDBError());
+		}
+		
+		echo 'Your order has been submitted!';
 	}
 }
 
 $val = new ShoppingCart();
 
 $val->addItem();
+$val->showCart();
 
 ?>
