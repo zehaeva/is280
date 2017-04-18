@@ -1,13 +1,14 @@
 <?php
 include_once('inc/db.php');
 include_once('menu.php');
+include_once('bootstrap-cdn.php'); 
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>MV Go Club Schedule</title>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
-		<?php include_once('bootstrap-cdn.php'); ?>
+		<?php echo get_scripts(); ?>
 	</head>
 	<body>
 <?php

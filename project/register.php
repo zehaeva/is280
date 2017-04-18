@@ -1,6 +1,7 @@
 <?php
 include_once('inc/db.php');
 include('menu.php');
+include_once('bootstrap-cdn.php');
 
 function refill($value) {
 	$return = '';
@@ -55,7 +56,7 @@ if ($_REQUEST['submit'] == 'Register' && $_REQUEST['terms']) {
 	<head>
 		<title>MV Go Club Register</title>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
-		<?php include_once('bootstrap-cdn.php'); ?>
+		<?php echo get_scripts(); ?>
 	</head>
 	<body>
 <?php
