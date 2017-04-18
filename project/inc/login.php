@@ -35,4 +35,8 @@ return '<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" ari
 
 }
 
+function populate_login_session() {
+	
+}
+
 ?>

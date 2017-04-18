@@ -4,11 +4,11 @@ include_once('inc/login.php');
 
 function menu($active) {
 	$pages = array(array('', 'Home'), 
-			 array("member", "Members"), 
-			 array("games", "Games"), 
-			 array("learn", "Learn to Play"), 
-			 array('schedule', "Club Events"),
-			 array('api', "API")
+			 	array("member", "Members"), 
+			 	array("games", "Games"), 
+			 	array("learn", "Learn to Play"), 
+			 	array('schedule', "Club Events"),
+			 	array('api', "API")
 		 );
 
 	$return = "<div class='container-fluid'><nav class='navbar navbar-default' role='navigation'>

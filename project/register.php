@@ -31,8 +31,8 @@ $error = '';
 
 //  if we're logged in we should never come here
 if (isset($_SESSION['user_name'])) {
-	header( 'Location: '. $_SERVER['SERVER_NAME'] .'/');
-	die();
+	$_REQUEST['login'] = true;
+	include_once('login.php');
 }
 
 if ($_REQUEST['submit'] == 'Register' && $_REQUEST['terms']) {

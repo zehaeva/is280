@@ -1,6 +1,29 @@
 <?php
 
 include_once('inc/db.php');
+include_once('menu.php');
+
+function login_error_page() {
+	return '<!DOCTYPE html>
+<html>
+	<head>
+		<title>MV Go Club Register</title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		'. include_once('bootstrap-cdn.php') .'
+	</head>
+	<body>
+'. menu(-1) .'
+		<div class="container">
+		<div class="panel">
+			<div class="panel-title"><h2>Login Error</h2></div>
+			<div class="panel-body">
+				An error occured during your login. Please try again later.
+			</div>
+		</div>
+	</body>
+</html>';
+}
+
 
 // if we're not logged in and we're trying to log in
 if (isset($_REQUEST['login']) && !isset($_SESSION['user_name'])) {
@@ -22,8 +45,11 @@ if (isset($_REQUEST['login']) && !isset($_SESSION['user_name'])) {
 		header('Location: '. $_SERVER['HTTP_REFERER']);
 		exit();
 	}	
+	else {
+		print(login_error_page());
+	}
 }
 else {
+	print(login_error_page());
 }
-
 ?>
