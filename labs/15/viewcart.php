@@ -41,7 +41,7 @@
 				}
 			}
 			
-			$cart->showcart();
+			$cart->viewcart();
 			
 			$_SESSION['curcart'] = serialize($cart);
 		?>

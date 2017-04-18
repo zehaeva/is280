@@ -1,0 +1,5 @@
+OLIVE001;	Monacale Black Olives;	Spicy black olives preserved in sunflower oil with fennel seed, salt, garlic, red hot pepper, laurel and wild marjoram. Weight: 15.7 ounces.;	5.99
+OLIVE002;	Picholine Green Olives;	Almond-shaped olive with a firm texture and fresh taste. Weight: 6 ounces.;	6.99
+OLIVE003;	Garlic Stuffed Olives;	Cured in the classic Sicilian method for up to nine months. The result is a firm olive with a crisp, mild garlic clove inside. Weight: 10 ounces.;	8.99
+OLIVE004;	Hickory Smoked Almond Stuffed Olives;	Big, delicious olives stuffed with California almonds, infused with the tantalizing flavor of hickory smoke. Weight: 12 ounces.;	4.99
+OLIVE005;	Magna Grecia Green Olives;	Spicy green olives preserved in sunflower oil with fennel seed, salt, garlic, red hot pepper, laurel and wild marjoram. Weight: 8 ounces.;	5.99

@@ -38,11 +38,13 @@ class ShoppingCart {
 		
 		echo '<table width="100%" border=1>';
 		echo '<tr><th>Product</th><th>Description</th><th>Price</th><th>Select Item</th></tr>';
+		
 		while ($row = $result->fetch_row()) {
 			echo '<tr><td>'. $row[1] .'</td><td>'. $row[2] .'</td>';
 			printf('<td align="center">$ %.2f</td>', $row[3]);
-			echo '<td align="center"><a href="showcart.php?PHPSESSID='. session_id() .'&operation=additem&productid='. $row[0] .'">Add</a></td></tr>'; 
+			echo '<td align="center"><a href="viewcart.php?PHPSESSID='. session_id() .'&operation=additem&productid='. $row[0] .'">Add</a></td></tr>'; 
 		}
+		
 		echo '</table>';
 	}
 	
@@ -63,11 +65,11 @@ class ShoppingCart {
 		@$this->conn->select_db($this->db_name) or die($this->getDBError());
 	}
 	
-	private function getshowcarturl($operation, $productid) {
-		return 'showcart.php?PHPSESSID='. session_id() .'&operation='. $operation .'&productid='. $productid;
+	private function getviewcarturl($operation, $productid) {
+		return 'viewcart.php?PHPSESSID='. session_id() .'&operation='. $operation .'&productid='. $productid;
 	}
 	
-	public function showCart() {
+	public function viewcart() {
 		if (empty($this->orders)) {
 			echo "<p>Your Shopping Cart is empty</p>";
 		}
@@ -83,16 +85,16 @@ class ShoppingCart {
 				while($row = mysqli_fetch_row($result)) {
 					$total += $row[3] * $Order;
 					echo '<tr>';
-					echo '<td align="center"><a href="'. $this->getshowcarturl('remove', $row[0]) .'">Remove</a></td>';
+					echo '<td align="center"><a href="'. $this->getviewcarturl('remove', $row[0]) .'">Remove</a></td>';
 					echo '<td>'. $row[1] .'</td>';
 					echo '<td align="center">'. $order .'</td>';
-					echo '<td align="center"><a href="'. $this->getshowcarturl('addone', $row[0]) .'">Add One</a></td>';
-					echo '<td align="center"><a href="'. $this->getshowcarturl('removeone', $row[0]) .'">Remove One</a></td>';
+					echo '<td align="center"><a href="'. $this->getviewcarturl('addone', $row[0]) .'">Add One</a></td>';
+					echo '<td align="center"><a href="'. $this->getviewcarturl('removeone', $row[0]) .'">Remove One</a></td>';
 					printf('<td align="center">$%.02f</td>', $row[3]);
 					echo '</tr>';
 				}
 			}
-			echo '<tr><td align="center"><a href="'. $this->getshowcarturl('emptycart', 0) .'"><strong>Empty Cart</strong></a></td>';
+			echo '<tr><td align="center"><a href="'. $this->getviewcarturl('emptycart', 0) .'"><strong>Empty Cart</strong></a></td>';
 			echo '<td colspan=2><strong>Your shopping cart contains '. count($this->orders) .' products</strong></td>';
 			printf('<td align="center"><strong>Total: $%.02f</strong></td></tr>', $total);
 			echo '</table>';
@@ -139,6 +141,6 @@ class ShoppingCart {
 $val = new ShoppingCart();
 
 $val->addItem();
-$val->showCart();
+$val->viewcart();
 */
 ?>
