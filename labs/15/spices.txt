@@ -1,0 +1,5 @@
+SPICE001; Anise Seed;	Anise seeds have a sweet perfume and a strong taste similar to that of licorice.  The seeds are often used in Indian cuisine to enhance the flavor of soups and fish. Weight: 4 ounces.;	3.95
+SPICE002;	Bay Leaf: Ground;	 Bay leaf is one of the most sought after culinary spices for flavoring soups, casseroles, stews, fish, meat, poultry, puddings and marinades. Weight: 16 ounces.;	9.65
+SPICE003;	Lovage Root;	Lovage root comes from Czechoslovakia and Italy. It has a strong, celery like taste. Lovage Root is commonly used in soups and stews. Weight: 4.5 ounces;	4.39	
+SPICE004;	Marjoram: Whole;	 Delicate, sweet, pleasant flavor with a slightly bitter undertone. Marjoram is closely related to oregano, but has a more delicate flavor and is a gentler herb than oregano. Weight: 5 ounces.;	5.45
+SPICE005;	Turmeric: Ground;	Turmeric is a member of the ginger family and has been used for over 2,000 years in China, India, and the Middle East. It adds a warm, mild aroma and a yellow color to foods. Weight: 4.5 ounces.;	3.75

@@ -1,0 +1,5 @@
+COFFEE001;	Jamaican Blue Mountain Coffee;	This extraordinary coffee, famous for its exquisite flavor and strong body, is grown in the majestic Blue Mountain range in Jamaica. Weight: 1 pound.;	22.95
+COFFEE002;	Blue Grove Hawaiian Maui Premium Coffee;	 This delightful coffee has an aroma that is captivatingly rich and nutty with a faint hint of citrus. Weight: 1 pound.;	18.89
+COFFEE003;	Sumatra Supreme Coffee;	One of the finest coffees in the world, medium roasted to accentuate its robust character. Weight: 5 pounds.;	29.95
+COFFEE004;	Pure Kona Coffee;	Grown and processed using traditional Hawaiian methods, then roasted in small batches to maintain peak freshness and flavor. Weight: 10 ounces.;	21.45
+COFFEE005;	Guatemala Antigua Coffee;	An outstanding coffee with a rich, spicy, and smokey flavor. Weight: 10 ounces.;	7.50

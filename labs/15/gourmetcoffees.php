@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	$_SESSION = array();
-	session_destroy();
+	//session_destroy();
 	
 	include_once('shoppingcart.php');
 ?>
@@ -21,7 +21,7 @@
 		</p>
 		<h2>Shop Coffee</h2>
 		<?php
-			$database = 'getchengourmet';
+			$database = 'gretchengourmet';
 			$table = 'coffee';
 			if (isset($_SESSION['curcart'])) {
 				$cart = unserialize($_SESSION['curcart']);
