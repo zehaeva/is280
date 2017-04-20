@@ -77,9 +77,10 @@ class ShoppingCart {
 			echo '<table width="100%" border=1>';
 			echo '<tr><th>Remove Item</th><th>Product</th><th>Quantity</th><th>Price</th></tr>';
 			$total = 0;
-			foreach($this->orders as $order) {
-				$sql = 'SELECT * FROM '. $this->order_table[key($this->orders)] 
-					  ." WHERE productid = '". key($this->orders) ."'";
+			foreach($this->orders as $key=>$order) {
+				$sql = 'SELECT * FROM '. $this->order_table[$key] 
+					  ." WHERE productid = '". $key ."'";
+				print($sql .'<br />');
 				$result = mysqli_query($this->conn, $sql) or die($this->getDBError());
 				
 				while($row = mysqli_fetch_row($result)) {
