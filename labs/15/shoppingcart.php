@@ -79,7 +79,7 @@ class ShoppingCart {
 			$total = 0;
 			foreach($this->orders as $order) {
 				$sql = 'SELECT * FROM '. $this->order_table[key($this->orders)] 
-					  .' WHERE productid = '. key($this->orders);
+					  ." WHERE productid = '". key($this->orders) ."'";
 				$result = mysqli_query($this->conn, $sql) or die($this->getDBError());
 				
 				while($row = mysqli_fetch_row($result)) {
@@ -87,9 +87,9 @@ class ShoppingCart {
 					echo '<tr>';
 					echo '<td align="center"><a href="'. $this->getviewcarturl('remove', $row[0]) .'">Remove</a></td>';
 					echo '<td>'. $row[1] .'</td>';
-					echo '<td align="center">'. $order .'</td>';
-					echo '<td align="center"><a href="'. $this->getviewcarturl('addone', $row[0]) .'">Add One</a></td>';
-					echo '<td align="center"><a href="'. $this->getviewcarturl('removeone', $row[0]) .'">Remove One</a></td>';
+					echo '<td align="center">'. $order .' ';
+					echo '<a href="'. $this->getviewcarturl('addone', $row[0]) .'">Add One</a> ';
+					echo '<a href="'. $this->getviewcarturl('removeone', $row[0]) .'">Remove One</a></td>';
 					printf('<td align="center">$%.02f</td>', $row[3]);
 					echo '</tr>';
 				}
