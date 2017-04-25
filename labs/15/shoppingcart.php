@@ -80,11 +80,11 @@ class ShoppingCart {
 			foreach($this->orders as $key=>$order) {
 				$sql = 'SELECT * FROM '. $this->order_table[$key] 
 					  ." WHERE productid = '". $key ."'";
-				print($sql .'<br />');
+				
 				$result = mysqli_query($this->conn, $sql) or die($this->getDBError());
 				
 				while($row = mysqli_fetch_row($result)) {
-					$total += $row[3] * $Order;
+					$total += $row[3] * $order;
 					echo '<tr>';
 					echo '<td align="center"><a href="'. $this->getviewcarturl('remove', $row[0]) .'">Remove</a></td>';
 					echo '<td>'. $row[1] .'</td>';

@@ -46,7 +46,7 @@
 			$_SESSION['curcart'] = serialize($cart);
 		?>
 		<p>
-			<a href="<?php echo "checkout.php?operation=checkout&PHPSESSID=". session_id() ."&productid=" . $_REQUEST['productid']; ?>">Checkout</a>
+			<a href="<?php echo "checkout.php?operation=checkout&PHPSESSID=". session_id() ."&productid=" . @$_REQUEST['productid']; ?>">Checkout</a>
 			<a href="index.php">Cancel Order</a>
 		</p>
 	</body>

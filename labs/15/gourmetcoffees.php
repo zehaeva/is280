@@ -41,6 +41,6 @@
 			
 			$_SESSION['curcart'] = serialize($cart);
 		?>
-		<p><a href="<?php echo 'showcart.php?PHPSESSID='. session_id(); ?>">Show Cart</a></p>
+		<p><a href="<?php echo 'viewcart.php?PHPSESSID='. session_id(); ?>">Show Cart</a></p>
 	</body>
 </html>
