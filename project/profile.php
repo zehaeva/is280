@@ -25,7 +25,7 @@ else {
 		<title>MV Go Club</title>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
 <?php echo get_scripts(); ?>
-	</head>
+		</head>
 	<body>
 <?php
 print(menu(0));
@@ -34,7 +34,7 @@ print(menu(0));
 			<div class="panel">
 				<div class='panel-title'><h3>Profile</h3></div>
 				<div class='content panel-body'>
-					<form class="form-horizontal" action="api/member/<?php echo $_SESSION['user_id']; ?>" method="post">
+					<form id=profile class="form-horizontal" action="api/member/<?php echo $_SESSION['user_id']; ?>" method="post">
 						<input type=hidden name="method" value="PUT" />
 					<?php echo form_field('User Name', 'user_name', $_SESSION['user_name']); ?>
 					<?php echo form_field('First Name', 'given_name', $_SESSION['given_name']); ?>
@@ -46,12 +46,19 @@ print(menu(0));
 					<?php echo form_field('KGS ID', 'kgs_id', $_SESSION['kgs_id']); ?>
 
 						<div class="form-group"><div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default">Update</button>
+							<button type="button" id="post-btn" class="btn btn-default">Update</button>
 						</div>
 					</form>
 				</div>
 			</div>
- 		</div> 
+		</div> 
+		<script>
+		$("#post-btn").click(function(){        
+			$.post("api/member/<?php echo $_SESSION['user_id']; ?>", $("#profile").serialize(), function(data) {
+				// don't really need to do anything here
+			});
+		});
+		</script>
 	</body>
 </html>
 <?php

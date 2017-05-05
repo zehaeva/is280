@@ -1,17 +1,24 @@
 <?php
 	include_once("../inc/db.php");
+	include_once("../inc/functions.php");
 
-	if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+	function get_user($userid) {
 		$sql = 'SELECT * FROM "users" ';
 
-		if (isset($_REQUEST["id"]) && $_REQUEST['id'] >= 1) {
+		if (isset($userid) && $userid >= 1) {
 			$sql .= ' WHERE "user_id" = $1 limit 1';
-			$results = pg_query_params($sql, array($_REQUEST["id"]));
+			$results = pg_query_params($sql, array($userid));
 		}
 		else {
 			$results = pg_query($sql);
 		}
+
+		return $results;
 	}
+
+	if ($_SERVER['REQUEST_METHOD'] == 'GET' || $_REQUEST['method'] == 'GET') {
+		$results = get_user($_REQUEST['id']);
+	}	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_REQUEST['method'] == 'POST') {
 		$sql = 'INSERT INTO users (given_name, sur_name, aga_id, pandanet_profile_name) VALUES ($1, $2, $3, $4);';
 
@@ -42,12 +49,14 @@
 		$values[] = $_REQUEST['id'];
 
 		$results = pg_query_params($sql, $values);
-	}
-	else {
-		header('Location: '. $_SERVER['http_referer']);
+		$results = get_user($_REQUEST['id']);
+		$row = pg_fetch_assoc($results);
+		set_user_session_data($row);
 	}
 	if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
 	}
+
+	
 
 // output the records we found!
 	if (isset($results)) {

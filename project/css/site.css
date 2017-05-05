@@ -9,3 +9,20 @@ body {
 #title {
 	color: #ffffff;
 }
+
+.gtable { 
+	display: table; 
+	width: 100%;
+	padding-top: 5px;
+}
+.gtrow { 
+	display: table-row; 
+	padding-bottom: 2px;
+}
+.gthrow { 
+	display: table-row; 
+	font-weight: bold;
+	background-color: #f7f7f7;
+	color: #666666;
+}
+.gtcell { display: table-cell; }

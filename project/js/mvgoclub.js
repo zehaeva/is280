@@ -1,9 +1,10 @@
+
 Vue.component('members', {
     props: ['member'],
     template: '<li class="list-group-item"><memberName :mData="member"></memberName> <AGALink :mData="member" /><KGSLink :mData="member" /><OGSLink :mData="member" /><PandaNetLink :mData="member" /></li>'
 });
 
-var member = {
+var member = {//{{{
     user_id: null,
     given_name: null,
     sur_name: null,
@@ -11,35 +12,34 @@ var member = {
 	ogs_id: null,
 	kgs_id: null,
 	pandanet: null
-}
+}//}}}
 
-Vue.component('memberName', {
+Vue.component('memberName', {//{{{
 	props: ['mData', 'id'],
 	template: '<div>{{this.mData.given_name}} {{this.mData.sur_name}}</div>',
-});
+});//}}}
 
-Vue.component('OGSLink', {
+Vue.component('OGSLink', {//{{{
 	props: ['mData', 'id'],
 	template: '<div v-if="this.mData.ogs_id > 0">OGS ID: <a :href="\'https://www.online-go.com/player/\' + this.mData.ogs_id + \'/\'">{{this.mData.ogs_id}}</a></div>',
-});
+});//}}}
 
-Vue.component('KGSLink', {
+Vue.component('KGSLink', {//{{{
 	props: ['mData', 'id'],
 	template: '<div v-if="this.mData.kgs_id">KGS: {{this.mData.kgs_id}}</div>',
-});
+});//}}}
 
-Vue.component('AGALink', {
+Vue.component('AGALink', {//{{{
 	props: ['mData', 'id'],
 	template: '<a v-if="this.mData.aga_id > 0" :href="\'http://www.usgo.org/ratings-lookup-id?PlayerID=\' + this.mData.aga_id" >AGA Rank Info</a></a>',
-});
+});//}}}
 
-Vue.component('PandaNetLink', {
+Vue.component('PandaNetLink', {//{{{
 	props: ['mData', 'id'],
 	template: '<div v-if="this.mData.pandanet"> Pandanet User Name: {{this.mData.pandanet}}</div>',
-});
+});//}}}
 
-
-var membersapp = new Vue({
+var membersapp = new Vue({//{{{
   	el: '#member-app',
 	data: {memberList: null},
 	created: function() {
@@ -56,7 +56,26 @@ var membersapp = new Vue({
 			xhr.send()
 		}
 	}
-})
+})//}}}
+
+Vue.component('member_select', {
+	props: ['members'],
+	template: '<option v-for="member in this.members" v-bind={{member.user_id}}>{{member.given_name}} {{member.sur_name}}</option>'
+});
+
+var game = {
+	game_id: null,
+	white_player: null,
+	black_player: null,
+	file_url: null,
+	date_played: null,
+	date_uploaded: null
+}
+
+Vue.component('game_input', {
+	props: ['game'],
+	template: '<td><select name="white_player"><member_select :members/></select></td><td><select name="black_player"><member_select :members/></select></td><td><input type=text class="datepicker" /></td>'
+});
 
 // register the grid component
 Vue.component('demo-grid', {//{{{
@@ -64,6 +83,7 @@ Vue.component('demo-grid', {//{{{
 	props: {
 		data: Array,
 		columns: Array,
+		types: Object,
 		header: Object,
 		filterKey: String
 	},
@@ -119,6 +139,7 @@ var demo = new Vue({
 	data: {
 		searchQuery: '',
 		gridColumns: ['black_player_name', 'white_player_name', 'date_played', 'date_uploaded', 'file_url' ],
+		gridTypes: {black_player_name: 'text', white_player_name: 'text', date_played: 'date', date_uploaded: 'date', file_url: 'text' },
 		gridHeader: {black_player_name: 'Black Player', white_player_name: 'White Player', date_played: 'Date Played', date_uploaded: 'Date Uploaded', file_url: 'File' },
 		gridData: null
 	},

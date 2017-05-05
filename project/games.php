@@ -16,7 +16,17 @@ include_once('bootstrap-cdn.php');
   print(menu(2));
 ?>
 		<!-- component template -->
-		<script type="text/x-template" id="grid-template"><table class="table table-hover"><thead><tr><th v-for="key in columns"@click="sortBy(key)":class="{ active: sortKey == key }">{{ header[key] | capitalize }}<span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"></span></th></tr></thead><tbody><tr v-for="entry in filteredData"><td v-for="key in columns">{{entry[key]}}</td></tr></tbody></table></script>
+<script type="text/x-template" id="grid-template"><div class="gtable">
+<div class="gthrow"><div v-for="key in columns"@click="sortBy(key)" :class="{ active: sortKey == key, gtcell: true }">{{ header[key] | capitalize }}<span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'"></span></div></div>
+<?php
+	if (isset($_SESSION['user_name'])) {
+		echo '<div class="gtrow"><div class="gtcell" v-for="key in columns"><input class="form-control" :type="types[key]" :name="key" /></div><div class="gtcell"><button type=submit class="form-control">Add</button></div>
+</div>';
+//<div class="gcell"><button type=submit class="form-control">Add</button></div>
+	}
+?>
+	<div class="gtrow" v-for="entry in filteredData"><div class="gtcell" v-for="key in columns">{{entry[key]}} </div></div>
+</div></script>
 
 		<div class="container">
 			<div class="panel">
@@ -26,11 +36,12 @@ include_once('bootstrap-cdn.php');
 
 					<div id="demo">
 					  <form id="search">
-						Search <input name="query" v-model="searchQuery">
+						Search <input name="query" class="form-control" v-model="searchQuery">
 					  </form>
 					  <demo-grid
 						:data="gridData"
 						:columns="gridColumns"
+						:types="gridTypes"
 						:header="gridHeader"
 						:filter-key="searchQuery">
 					  </demo-grid>
