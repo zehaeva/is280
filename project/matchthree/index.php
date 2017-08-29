@@ -8,6 +8,7 @@
 		<p>
 		<script>
 var gems = [];
+var selected_gems = [];
 var colors = ['red', 'green', 'blue'];
 
 var gem_offset = 08;
@@ -55,19 +56,17 @@ function Gem(X, Y, Color) {
 	// how to show this gem on the screen
 	this.display = function() {/*{{{*/
 		fill(this.color);
-		noStroke();
+		if (this.selected) {
+			stroke(color('white'));
+		}
+		else {
+			noStroke();
+		}
 		ellipse(this.x, this.y, this.diameter, this.diameter);
 	}/*}}}*/
 
 	// highlight gem
 	this.click = function() {/*{{{*/
-		if (this.selected) {
-			this.color = this.original_color;
-		}
-		else {
-			this.color = color('black');
-		}
-
 		this.selected = !this.selected;
 	}/*}}}*/
 }
@@ -78,10 +77,45 @@ function mousePressed() {
 	var x = Math.floor(((mouseX) / gem_width));
 	var y = Math.floor(((mouseY) / gem_width));
 
-	gems[x][y].click();
+	var reset = false;
+
+//	is something selected
+//	is it ordinally adjacent to what was just clicked?
+	if (selected_gems.length > 0) {
+		if (	
+			(x == selected_gems[0].x && (y + 1) == selected_gems[0].y) ||
+			(x == selected_gems[0].x && (y - 1) == selected_gems[0].y) ||
+			((x + 1) == selected_gems[0].x && y == selected_gems[0].y) ||
+			((x - 1) == selected_gems[0].x && y == selected_gems[0].y)
+		) {
+			//	SWAP!
+
+			//  check for collapse
+			if (true) {
+
+			}
+			//  no collapse, put them back
+			else {
+
+			}	
+		}
+		else {
+			reset = true;
+		}
+	}
+//	if nothing is selected then select it
+	else {
+		reset = true;
+	}
+
+	if (reset) {
+		gems[x][y].click();
+		selected_gems = [];
+		selected_gems[0] = gems[x][y];
+	}
 }
 
-function markForDelete (streak, deleteme, i, j) {
+function markForDelete (streak, deleteme, i, j) {/*{{{*/
 	if (streak.length == 0) {
 		streak[0] = gems[i][j];
 	} 
@@ -100,7 +134,7 @@ function markForDelete (streak, deleteme, i, j) {
 	}
 
 	return [streak, deleteme];
-}
+}/*}}}*/
 
 //	clear the board and repopulate it!
 function clearBoard() {/*{{{*/
